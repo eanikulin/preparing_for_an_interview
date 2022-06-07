@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+        {% include 'form.html' %}
+        <input class="form-control" type="submit" value="Save">
+    </form>
+
+{% endblock %}

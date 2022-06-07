@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form action="{% url 'product:add' %}">
+        <button class="btn btn-primary">Добавить продукт</button>
+    </form>
+
+    <table class="table">
+        <tr>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Дата добавления</th>
+            <th>Единица измерения</th>
+            <th>Поставщик</th>
+        </tr>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.date }}</td>
+                <td>{{ product.unit }}</td>
+                <td>{{ product.provider }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
